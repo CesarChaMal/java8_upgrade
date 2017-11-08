@@ -48,6 +48,7 @@ public class SortGolfers {
 
         // sort by score
         SortGolfers.printSorted(comparingInt(Golfer::getScore));
+        SortGolfers.printSorted(Comparator.comparingInt(Golfer::getScore));
 
         // sort by score, descending
         SortGolfers.printSorted(comparingInt(Golfer::getScore).reversed());
