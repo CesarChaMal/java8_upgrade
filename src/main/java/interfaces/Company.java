@@ -5,5 +5,5 @@ public interface Company {
         return "Initech";
     }
 
-    // Java 7: String getName();
+    // String getName();
 }
