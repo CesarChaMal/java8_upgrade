@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class InMemoryMemberDAO implements MemberDAO {
     private static final MemberDAO dao = new InMemoryMemberDAO();
 
-    private List<Member> allMembers = Arrays.asList(
+    private final List<Member> allMembers = Arrays.asList(
             new Member(1L, Title.LORD, "Eddard", LocalDate.of(1959, Month.APRIL, 17), 100000.0, new House("Stark")),
             new Member(2L, Title.LADY, "Catelyn", LocalDate.of(1964, Month.JANUARY, 17), 80000.0, new House("Stark")),
             new Member(3L, Title.LADY, "Arya", LocalDate.of(1997, Month.APRIL, 15), 50000.0, new House("Stark")),
@@ -28,7 +28,7 @@ public class InMemoryMemberDAO implements MemberDAO {
             new Member(17L, Title.KING, "Stannis", LocalDate.of(1957, Month.MARCH, 27), 123456.0, new House("Baratheon")),
             new Member(18L, Title.QUEEN, "Margaery", LocalDate.of(1982, Month.FEBRUARY, 11), 80000.0, new House("Tyrell")),
             new Member(19L, Title.SIR, "Loras", LocalDate.of(1988, Month.MARCH, 24), 70000.0, new House("Tyrell")),
-            new Member(10L, Title.LADY, "Olenna", LocalDate.of(1938, Month.JULY, 20), 130000.0, new House("Tyrell")),
+            new Member(20L, Title.LADY, "Olenna", LocalDate.of(1938, Month.JULY, 20), 130000.0, new House("Tyrell")),
             new Member(21L, Title.LORD, "Roose", LocalDate.of(1963, Month.SEPTEMBER, 12), 100000.0, new House("Bolton")),
             new Member(22L, Title.LORD, "Ramsay", LocalDate.of(1985, Month.MAY, 13), 140000.0, new House("Bolton"))
     );

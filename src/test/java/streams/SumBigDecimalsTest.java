@@ -1,14 +1,14 @@
 package streams;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SumBigDecimalsTest {
-    private SumBigDecimals summer = new SumBigDecimals();
+    private final SumBigDecimals summer = new SumBigDecimals();
 
     @Test
     public void sumFirstN_usingReduce() {
@@ -16,7 +16,7 @@ public class SumBigDecimalsTest {
         assertEquals(new BigDecimal("55"), answer);
     }
 
-    @Test  @Ignore
+    @Test  @Disabled("disable until demo")
     public void sumFirstNDoubledValues() {
         BigDecimal answer = summer.sumDoubles(10);
 

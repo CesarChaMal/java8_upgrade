@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 import java.util.stream.IntStream;
 
 public class LazyStreams {
-    private static Logger logger = Logger.getLogger(LazyStreams.class.getName());
+    private static final Logger logger = Logger.getLogger(LazyStreams.class.getName());
 
     public static int multByTwo(int n) {
         System.out.printf("Inside multByTwo with arg %d%n", n);
@@ -20,8 +20,8 @@ public class LazyStreams {
     public static void main(String[] args) {
         // multiply numbers between 100 and 200 by 2, then find first n divisible by 3
         int firstEvenDoubleDivBy3 = IntStream.range(100, 200)
-                .map(n -> n * 2)
                 .filter(n -> n % 3 == 0)
+                .map(n -> n * 2)
                 .findFirst().orElse(0);
         System.out.println(firstEvenDoubleDivBy3);
 
@@ -29,8 +29,8 @@ public class LazyStreams {
         // Demonstrate laziness using print statements
 //        firstEvenDoubleDivBy3 = IntStream.range(100, 2_000_000)
         firstEvenDoubleDivBy3 = IntStream.iterate(100, n -> n + 1)
-                .map(LazyStreams::multByTwo)
                 .filter(LazyStreams::modByThree)
+                .map(LazyStreams::multByTwo)
                 .findFirst().orElse(0);
         System.out.printf("First even divisible by 3 is %d%n", firstEvenDoubleDivBy3);
     }
